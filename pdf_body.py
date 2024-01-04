@@ -38,18 +38,4 @@ class Chatbot:
         )
         self.chat_history = []
 
-    def main(self):
-        while True:
-            query = input("You: ")  
-
-            if query.lower() in ['quit', 'exit']:
-
-                break  
-
-            result = self.chain({"question": query, "chat_history": self.chat_history})
-
-            answer = result['answer']
-
-            print(f"Bot: {answer}")
-
-            self.chat_history.append((query, answer))
+    
